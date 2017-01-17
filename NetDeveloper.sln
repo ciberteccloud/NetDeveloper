@@ -9,6 +9,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Test", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{DB15B917-508A-450E-A6C8-AEC6C6B81969}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlScripts", "SqlScripts", "{C4D1DB79-2D9B-450E-82A4-79E02D9AD049}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modulo2", "modulo2", "{067A9100-EF0C-46B4-9499-840FFE298FF9}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\ceveg\OneDrive\Cibertruco\Developer\Material\Capitulo 2\07 Recursos\ArtistById.sql = C:\Users\ceveg\OneDrive\Cibertruco\Developer\Material\Capitulo 2\07 Recursos\ArtistById.sql
+		C:\Users\ceveg\OneDrive\Cibertruco\Developer\Material\Capitulo 2\07 Recursos\Chinook_Database.sql = C:\Users\ceveg\OneDrive\Cibertruco\Developer\Material\Capitulo 2\07 Recursos\Chinook_Database.sql
+		C:\Users\ceveg\OneDrive\Cibertruco\Developer\Material\Capitulo 2\07 Recursos\GetListOfArtist.sql = C:\Users\ceveg\OneDrive\Cibertruco\Developer\Material\Capitulo 2\07 Recursos\GetListOfArtist.sql
+		C:\Users\ceveg\OneDrive\Cibertruco\Developer\Material\Capitulo 2\07 Recursos\InsertArtist.sql = C:\Users\ceveg\OneDrive\Cibertruco\Developer\Material\Capitulo 2\07 Recursos\InsertArtist.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +40,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{067A9100-EF0C-46B4-9499-840FFE298FF9} = {C4D1DB79-2D9B-450E-82A4-79E02D9AD049}
 	EndGlobalSection
 EndGlobal

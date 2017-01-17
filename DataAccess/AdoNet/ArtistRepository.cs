@@ -84,9 +84,8 @@ namespace DataAccess.AdoNet
                     CommandType = CommandType.StoredProcedure
                 };
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
-
-                var artistId = (int)command.ExecuteScalar();                
-                return artistId;
+                
+                return (int)command.ExecuteScalar();
             }
         }
     }
