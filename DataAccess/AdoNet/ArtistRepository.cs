@@ -84,9 +84,22 @@ namespace DataAccess.AdoNet
                     CommandType = CommandType.StoredProcedure
                 };
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+                return (int)command.ExecuteScalar(); ;
+            }
+        }
 
-                var artistId = (int)command.ExecuteScalar();                
-                return artistId;
+        public int DeleteArtistById(int id)
+        {
+            var storeName = "dbo.DeleteArtist";
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                var command = new SqlCommand(storeName, connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                command.Parameters.Add("@artistId", SqlDbType.Int).Value = id;                
+                return (int)command.ExecuteScalar(); ;
             }
         }
     }
