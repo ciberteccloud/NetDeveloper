@@ -37,19 +37,6 @@ namespace DataAccess.Test
         }
 
         [TestMethod]
-        public void Search_Artist_By_Id_From_Store_Procedure()
-        {
-            var artist = _adonet.GetArtistById_Store_Procedure(1);
-            var expectedArtist = new Artist
-            {
-                ArtistId = 1,
-                Name = "AC/DC"
-            };
-            Assert.AreEqual(expectedArtist.ArtistId, artist.ArtistId);
-            Assert.AreEqual(expectedArtist.Name, artist.Name);
-        }
-
-        [TestMethod]
         public void Get_List_Of_Artist()
         {
             var artistList = _adonet.GetListArtist();            

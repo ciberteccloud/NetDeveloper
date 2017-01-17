@@ -26,25 +26,7 @@ namespace DataAccess.AdoNet
         }
 
         public Artist GetArtistById(int id)
-        {
-            var query = $"SELECT TOP 1 ArtistId, Name FROM dbo.Artist WHERE ArtistId={id}";
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-                var command = new SqlCommand(query, connection);
-                var reader = command.ExecuteReader();
-                Artist artist= new Artist();
-                while (reader.Read())
-                {
-                    artist.ArtistId = Convert.ToInt32(reader["ArtistId"]);
-                    artist.Name = reader["Name"].ToString();                    
-                }
-                return artist;
-            }
-        }
-
-        public Artist GetArtistById_Store_Procedure(int id)
-        {
+        {           
             var storeName = "dbo.ArtistById";
             using (var connection = new SqlConnection(_connectionString))
             {
