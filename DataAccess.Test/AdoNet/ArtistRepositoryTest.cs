@@ -3,16 +3,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Configuration;
 using System.Linq;
 using Models;
+using DataAccess.AdoNet;
 
 namespace DataAccess.Test
 {
     [TestClass]
-    public class AdoNetTest
+    public class ArtistRepositoryTest
     {
-        private readonly AdoNet _adonet;
-        public AdoNetTest()
+        private readonly ArtistRepository _adonet;
+        public ArtistRepositoryTest()
         {
-            _adonet = new AdoNet(ConfigurationManager.ConnectionStrings["ChinookConnection"].ConnectionString);
+            _adonet = new ArtistRepository(ConfigurationManager.ConnectionStrings["ChinookConnection"].ConnectionString);
         }
 
         [TestMethod]

@@ -3,16 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DataAccess
+namespace DataAccess.AdoNet
 {
-    public class AdoNet
+    public class ArtistRepository
     {
         private readonly string _connectionString;
-        public AdoNet(string connectionString)
+        public ArtistRepository(string connectionString)
         {
             _connectionString = connectionString;
         }

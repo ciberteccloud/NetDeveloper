@@ -51,11 +51,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AdoNetTest.cs" />
+    <Compile Include="AdoNet\ArtistRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
