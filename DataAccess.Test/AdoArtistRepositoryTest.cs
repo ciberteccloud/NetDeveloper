@@ -8,10 +8,10 @@ using DataAccess.AdoNet;
 namespace DataAccess.Test
 {
     [TestClass]
-    public class ArtistRepositoryTest
+    public class AdoArtistRepositoryTest
     {
         private readonly ArtistRepository _adonet;
-        public ArtistRepositoryTest()
+        public AdoArtistRepositoryTest()
         {
             _adonet = new ArtistRepository(ConfigurationManager.ConnectionStrings["ChinookConnection"].ConnectionString);
         }
