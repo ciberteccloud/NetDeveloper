@@ -49,5 +49,12 @@ namespace DataAccess.Test
             var artistId = _adonet.InsertArtist("New Artist");
             Assert.AreEqual(artistId > 0, true);
         }
+
+        [TestMethod]
+        public void Insert_Artist_By_Transaction()
+        {
+            var artistId = _adonet.InsertArtistByTransaction("New Artist Ado Transaction");
+            Assert.AreEqual(artistId > 0, true);
+        }
     }
 }
