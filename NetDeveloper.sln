@@ -9,13 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Test", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{DB15B917-508A-450E-A6C8-AEC6C6B81969}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modulo2_tarea_sql", "modulo2_tarea_sql", "{62E5CF60-0352-4B31-A443-6ED7687F6501}"
-	ProjectSection(SolutionItems) = preProject
-		DeleteArtist.sql = DeleteArtist.sql
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlScripts", "SqlScripts", "{209355F1-697B-458F-B417-54DA01C8A701}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,8 +30,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{62E5CF60-0352-4B31-A443-6ED7687F6501} = {209355F1-697B-458F-B417-54DA01C8A701}
 	EndGlobalSection
 EndGlobal
