@@ -52,6 +52,13 @@ namespace DataAccess.Test
         }
 
         [TestMethod]
+        public void Insert_Artist_By_Transaction()
+        {
+            var artistId = _dapperRepository.InsertArtistByTransaction("New Artist Dapper Transaction");
+            Assert.AreEqual(artistId > 0, true);
+        }
+
+        [TestMethod]
         public void Delete_Artist_By_Id()
         {
             var artistId = _dapperRepository.DeleteArtistById(279);

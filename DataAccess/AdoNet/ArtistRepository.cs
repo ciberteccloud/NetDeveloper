@@ -88,6 +88,33 @@ namespace DataAccess.AdoNet
             }
         }
 
+        public int InsertArtistByTransaction(string name)
+        {
+            var storeName = "dbo.InsertArtist";
+            int result = 0;
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                var sqlTransaction = connection.BeginTransaction();
+                var command = new SqlCommand(storeName, connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                command.Transaction = sqlTransaction;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+                try
+                {
+                    result= (int)command.ExecuteScalar();
+                    sqlTransaction.Commit();
+                }
+                catch (Exception)
+                {
+                    sqlTransaction.Rollback();
+                    result = 0;
+                }                
+                return result;
+            }
+        }
         public int DeleteArtistById(int id)
         {
             var storeName = "dbo.DeleteArtist";

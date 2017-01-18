@@ -7,6 +7,7 @@ using Dapper;
 using System.Data.SqlClient;
 using Models;
 using System.Data;
+using System.Transactions;
 
 namespace DataAccess.DapperRepo
 {
@@ -27,19 +28,19 @@ namespace DataAccess.DapperRepo
                 return result;
             }
         }
-        
+
         public Artist GetArtistById(int id)
         {
             var storeName = "dbo.ArtistById";
             using (var connection = new SqlConnection(_connectionString))
             {
-                var artist = connection.Query<Artist>(storeName, new { artistId=1 },
+                var artist = connection.Query<Artist>(storeName, new { artistId = 1 },
                                                       commandType: CommandType.StoredProcedure
                                                       ).SingleOrDefault();
                 return artist;
             }
         }
-        
+
         public IEnumerable<Artist> GetListArtist()
         {
             var storeName = "dbo.GetListOfArtist";
@@ -48,7 +49,7 @@ namespace DataAccess.DapperRepo
             {
                 var artist = connection.Query<Artist>(storeName,
                                                       commandType: CommandType.StoredProcedure);
-                return artist;                
+                return artist;
             }
         }
         public int InsertArtist(string name)
@@ -57,13 +58,33 @@ namespace DataAccess.DapperRepo
             using (var connection = new SqlConnection(_connectionString))
             {
                 var artist = connection.Query<int>(storeName,
-                                                   new { Name = name}, 
-                                                   commandType: CommandType.StoredProcedure)
+                                                   new { Name = name },
+                                                   commandType: CommandType.StoredProcedure
+                                                   )
                                                   .SingleOrDefault();
-                return artist;                
+                return artist;
             }
         }
 
+        public int InsertArtistByTransaction(string name)
+        {
+            var storeName = "dbo.InsertArtist";
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                int artistId = 0;
+                using (var transaction = new TransactionScope())
+                {
+
+                    artistId = connection.Query<int>(storeName,
+                                                 new { Name = name },
+                                                 commandType: CommandType.StoredProcedure
+                                                 )
+                                                 .SingleOrDefault();
+                    transaction.Complete();                    
+                }
+                return artistId;
+            }
+        }
         public int DeleteArtistById(int id)
         {
             var storeName = "dbo.DeleteArtist";
@@ -74,7 +95,7 @@ namespace DataAccess.DapperRepo
                                                    new { artistId = id },
                                                    commandType: CommandType.StoredProcedure)
                                                   .SingleOrDefault();
-                return artist;                
+                return artist;
             }
         }
     }
