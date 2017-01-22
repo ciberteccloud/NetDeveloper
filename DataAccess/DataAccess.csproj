@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdoNet\ArtistRepository.cs" />
+    <Compile Include="DapperRepo\PlaylistRepository.cs" />
     <Compile Include="DapperRepo\ArtistRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

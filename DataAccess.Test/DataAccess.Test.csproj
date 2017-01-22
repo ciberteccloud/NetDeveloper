@@ -59,6 +59,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AdoArtistRepositoryTest.cs" />
+    <Compile Include="DapperPlaylistRepositoryTest.cs" />
     <Compile Include="DapperArtistRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
