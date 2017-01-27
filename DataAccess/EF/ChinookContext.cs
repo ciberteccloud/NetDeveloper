@@ -19,5 +19,6 @@ namespace DataAccess.EF
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
         public virtual DbSet<Artist> Artist { get; set; }
+        public virtual DbSet<Playlist> Playlist { get; set; }
     }
 }
