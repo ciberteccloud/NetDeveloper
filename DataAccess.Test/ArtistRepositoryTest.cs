@@ -1,4 +1,4 @@
-﻿using DataAccess.EF;
+﻿using DataAccess.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Models;
 using System.Linq;
@@ -6,25 +6,25 @@ using System.Linq;
 namespace DataAccess.Test
 {
     [TestClass]
-    public class EFArtistRepositoryTest
+    public class ArtistRepositoryTest
     {
-        private readonly ArtistRepository _entity;
-        public EFArtistRepositoryTest()
+        private readonly UnitOfWork _unitOfWork;
+        public ArtistRepositoryTest()
         {
-            _entity = new ArtistRepository();
+            _unitOfWork = new UnitOfWork(new ChinookContext());
         }
 
         [TestMethod]
         public void Test_Connection_And_Count_Greater_Than_Zero()
         {
-            var count = _entity.Count();
+            var count = _unitOfWork.Artists.Count();
             Assert.AreEqual(count > 0, true);
         }
 
         [TestMethod]
         public void Search_Artist_By_Id()
         {
-            var artist = _entity.GetArtistById(1);
+            var artist = _unitOfWork.Artists.GetById(1);
             var expectedArtist = new Artist
             {
                 ArtistId = 1,
@@ -37,29 +37,37 @@ namespace DataAccess.Test
         [TestMethod]
         public void Get_List_Of_Artist()
         {
-            var artistList = _entity.GetListArtist();
+            var artistList = _unitOfWork.Artists.GetAll();
             Assert.AreEqual(artistList.Count() > 0, true);
         }
 
         [TestMethod]
         public void Get_List_Of_Artist_by_Store()
         {
-            var artistList = _entity.GetListArtistByStore();
+            var artistList = _unitOfWork.Artists.GetListArtistByStore();
             Assert.AreEqual(artistList.Count() > 0, true);
         }
 
         [TestMethod]
         public void Insert_Artist()
         {
-            var artistId = _entity.InsertArtist("New Artist EF");
-            Assert.AreEqual(artistId > 0, true);
+            var newArtist = new Artist
+            {                
+                Name = "Test Unit Of Work"
+            };
+            _unitOfWork.Artists.Add(newArtist);
+            _unitOfWork.Complete();
+            var expectedArtist = _unitOfWork.Artists.GetByName("Test Unit Of Work");
+            Assert.AreEqual(expectedArtist.ArtistId > 0, true);
+            Assert.AreEqual(expectedArtist.Name, "Test Unit Of Work");
         }
-                
+
         [TestMethod]
         public void Delete_Artist_By_Id()
         {
-            var artistId = _entity.DeleteArtistById(279);
-            Assert.AreEqual(279, artistId);
+            var removeArtist = _unitOfWork.Artists.GetByName("Test Unit Of Work");
+            _unitOfWork.Artists.Remove(removeArtist);            
+            Assert.AreEqual(_unitOfWork.Complete()> 0, true);
         }
     }
 }
