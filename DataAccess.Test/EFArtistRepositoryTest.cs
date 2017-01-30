@@ -42,6 +42,13 @@ namespace DataAccess.Test
         }
 
         [TestMethod]
+        public void Get_List_Of_Artist_by_Store()
+        {
+            var artistList = _entity.GetListArtistByStore();
+            Assert.AreEqual(artistList.Count() > 0, true);
+        }
+
+        [TestMethod]
         public void Insert_Artist()
         {
             var artistId = _entity.InsertArtist("New Artist EF");

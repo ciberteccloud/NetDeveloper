@@ -27,6 +27,12 @@ namespace DataAccess.EF
             return _context.Artist;
         }
 
+        public IEnumerable<Artist> GetListArtistByStore()
+        {
+            return _context.Database.SqlQuery<Artist>("GetListOfArtist");
+        }
+        
+
         public int InsertArtist(string name)
         {
             var artist = new Artist { Name = name };
