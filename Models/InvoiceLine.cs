@@ -1,6 +1,9 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Models
 {
-    public class InvoiceLine
+    [Table("InvoiceLine")]
+    public partial class InvoiceLine
     {
         public int InvoiceLineId { get; set; }
 
@@ -8,8 +11,13 @@ namespace Models
 
         public int TrackId { get; set; }
 
+        [Column(TypeName = "numeric")]
         public decimal UnitPrice { get; set; }
 
         public int Quantity { get; set; }
+
+        public virtual Invoice Invoice { get; set; }
+
+        public virtual Track Track { get; set; }
     }
 }
