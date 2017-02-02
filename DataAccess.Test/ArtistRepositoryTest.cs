@@ -1,15 +1,14 @@
-﻿using DataAccess.EF;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Models;
 using System.Linq;
 
 namespace DataAccess.Test
 {
     [TestClass]
-    public class EFArtistRepositoryTest
+    public class ArtistRepositoryTest
     {
         private readonly ArtistRepository _entity;
-        public EFArtistRepositoryTest()
+        public ArtistRepositoryTest()
         {
             _entity = new ArtistRepository();
         }

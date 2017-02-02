@@ -67,11 +67,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AdoArtistRepositoryTest.cs" />
-    <Compile Include="EFPlaylistRepositoryTest.cs" />
-    <Compile Include="EFArtistRepositoryTest.cs" />
-    <Compile Include="DapperPlaylistRepositoryTest.cs" />
-    <Compile Include="DapperArtistRepositoryTest.cs" />
+    <Compile Include="ArtistRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

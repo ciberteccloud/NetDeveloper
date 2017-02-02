@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace DataAccess.EF
+namespace DataAccess
 {
     public class ChinookContext: DbContext
     {

@@ -54,12 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdoNet\ArtistRepository.cs" />
-    <Compile Include="DapperRepo\PlaylistRepository.cs" />
-    <Compile Include="DapperRepo\ArtistRepository.cs" />
-    <Compile Include="EF\PlaylistRepository.cs" />
-    <Compile Include="EF\ArtistRepository.cs" />
-    <Compile Include="EF\ChinookContext.cs" />
+    <Compile Include="ArtistRepository.cs" />
+    <Compile Include="ChinookContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
