@@ -19,7 +19,7 @@ namespace DataAccess.Repositories
 
         public Artist GetByName(string name)
         {
-            return ChinookContext.Artist.FirstOrDefault(artist => artist.Name == name);
+            return ChinookContext.Artists.FirstOrDefault(artist => artist.Name == name);
         }
 
         public ChinookContext ChinookContext

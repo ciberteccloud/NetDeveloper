@@ -14,8 +14,16 @@ namespace DataAccess
             Configuration.LazyLoadingEnabled = false;
             Configuration.ValidateOnSaveEnabled = false;
         }
-        public virtual DbSet<Artist> Artist { get; set; }
-        public virtual DbSet<Playlist> Playlist { get; set; }
+        public virtual DbSet<Artist> Artists { get; set; }
+        public virtual DbSet<Playlist> Playlists { get; set; }
+        public virtual DbSet<Album> Albums { get; private set; }
+        public virtual DbSet<Customer> Customers { get; private set; }
+        public virtual DbSet<Employee> Employees { get; private set; }
+        public virtual DbSet<Genre> Genres { get; private set; }
+        public virtual DbSet<Invoice> Invoices { get; private set; }
+        public virtual DbSet<InvoiceLine> InvoiceLines { get; private set; }
+        public virtual DbSet<MediaType> MediaTypes { get; private set; }        
+        public virtual DbSet<Track> Tracks { get; private set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
