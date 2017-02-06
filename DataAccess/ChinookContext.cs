@@ -8,8 +8,7 @@ namespace DataAccess
     {
         public ChinookContext() : base("ChinookConnection")
         {
-            Database.SetInitializer<ChinookContext>(null);
-            Configuration.AutoDetectChangesEnabled = false;
+            Database.SetInitializer<ChinookContext>(null);            
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
             Configuration.ValidateOnSaveEnabled = false;
