@@ -212,6 +212,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Site\ArtistWeb\CreateArtist.aspx" />
+    <Content Include="Site\ArtistWeb\ListArtist.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -368,6 +370,20 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site\ArtistWeb\CreateArtist.aspx.cs">
+      <DependentUpon>CreateArtist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\ArtistWeb\CreateArtist.aspx.designer.cs">
+      <DependentUpon>CreateArtist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\ArtistWeb\ListArtist.aspx.cs">
+      <DependentUpon>ListArtist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\ArtistWeb\ListArtist.aspx.designer.cs">
+      <DependentUpon>ListArtist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
