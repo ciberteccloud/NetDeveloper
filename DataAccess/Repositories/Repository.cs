@@ -10,6 +10,10 @@ namespace DataAccess.Repositories
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext Context;
+        protected ChinookContext ChinookContext
+        {
+            get { return Context as ChinookContext; }
+        }
         public Repository(DbContext context)
         {
             Context = context;

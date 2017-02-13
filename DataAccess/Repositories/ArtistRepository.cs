@@ -21,10 +21,6 @@ namespace DataAccess.Repositories
         {
             return ChinookContext.Artists.FirstOrDefault(artist => artist.Name == name);
         }
-
-        public ChinookContext ChinookContext
-        {
-            get { return Context as ChinookContext; }
-        }
+        
     }
 }

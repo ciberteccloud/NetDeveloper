@@ -17,7 +17,7 @@ namespace DataAccess
             _context = context;
             Artists = new ArtistRepository(_context);
             Albums = new Repository<Album>(_context);
-            Customers = new Repository<Customer>(_context);
+            Customers = new CustomerRepository(_context);
             Employees = new Repository<Employee>(_context);
             Genres = new Repository<Genre>(_context);
             Invoices = new Repository<Invoice>(_context);
@@ -29,7 +29,7 @@ namespace DataAccess
 
         public IArtistRepository Artists { get; private set; }
         public Repository<Album> Albums { get; private set; }
-        public Repository<Customer> Customers { get; private set; }
+        public ICustomerRepository Customers { get; private set; }
         public Repository<Employee> Employees { get; private set; }
         public Repository<Genre> Genres { get; private set; }
         public Repository<Invoice> Invoices { get; private set; }
