@@ -26,7 +26,7 @@ namespace WebForms.Site.ArtistWeb
 
         protected IEnumerable<Artist> GetData(int pageNumber)
         {
-            return _unit.Artists.GetListArtistByPage(pageNumber, rowSize);
+            return _unit.Artists.GetListArtistByPage(pageNumber, rowSize).ToList();
         }
 
         protected void GetPage(object sender, EventArgs e)

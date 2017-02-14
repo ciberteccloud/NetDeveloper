@@ -1,6 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateArtist.aspx.cs" Inherits="WebForms.Site.ArtistWeb.CreateArtist" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site/ArtistWeb/ArtistMasterPage.master" AutoEventWireup="true" CodeBehind="CreateArtist.aspx.cs" Inherits="WebForms.Site.ArtistWeb.CreateArtist" %>
 
-<asp:Content ID="ArtistContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="ButtonContent" ContentPlaceHolderID="ButtonContent" runat="server">
+    <a class="btn btn-info" href="ListArtist.aspx">
+        <span class="glyphicon glyphicon-hand-left"></span> Listado
+    </a>
+</asp:Content>
+<asp:Content ID="ArtistContent" ContentPlaceHolderID="ArtistContent" runat="server">
     <div class="row">
         <div>
             <asp:Label ID="Label1" runat="server" Text="Artist Name:" />

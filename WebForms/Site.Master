@@ -72,6 +72,7 @@
                 </div>
             </div>
         </div>
+        <br />
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
