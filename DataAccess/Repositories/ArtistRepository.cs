@@ -21,6 +21,12 @@ namespace DataAccess.Repositories
         {
             return ChinookContext.Artists.FirstOrDefault(artist => artist.Name == name);
         }
-        
+
+        public IEnumerable<Artist> GetListArtistByPage(int pageNumber, int rowSize)
+        {
+            return ChinookContext.Artists.OrderBy(x=> x.ArtistId)
+              .Skip(rowSize * (pageNumber-1))
+              .Take(rowSize);
+        }
     }
 }
