@@ -16,7 +16,7 @@
     <RootNamespace>WebForms</RootNamespace>
     <AssemblyName>WebForms</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -221,7 +221,7 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <Content Include="Site\ArtistWeb\ArtistMasterPage.master" />
+    <Content Include="Site\MantainTemplate.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -372,19 +372,19 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Site\ArtistWeb\ArtistMasterPage.master.cs">
-      <DependentUpon>ArtistMasterPage.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site\ArtistWeb\ArtistMasterPage.master.designer.cs">
-      <DependentUpon>ArtistMasterPage.master</DependentUpon>
-    </Compile>
     <Compile Include="Site\ArtistWeb\CreateArtist.aspx.cs">
       <DependentUpon>CreateArtist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site\ArtistWeb\CreateArtist.aspx.designer.cs">
       <DependentUpon>CreateArtist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\MantainTemplate.master.cs">
+      <DependentUpon>MantainTemplate.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\MantainTemplate.master.designer.cs">
+      <DependentUpon>MantainTemplate.master</DependentUpon>
     </Compile>
     <Compile Include="Site\ArtistWeb\ListArtist.aspx.cs">
       <DependentUpon>ListArtist.aspx</DependentUpon>
@@ -431,7 +431,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>8281</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:8281/</IISUrl>
+          <IISUrl>http://localhost/WebForms</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
