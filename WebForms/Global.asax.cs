@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -16,6 +17,14 @@ namespace WebForms
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Application_Error(Object sender, EventArgs e)
+        {
+            Exception ex = Server.GetLastError();
+            if (ex is ThreadAbortException)
+                return;            
+            Response.Redirect("Error.aspx");
         }
     }
 }
