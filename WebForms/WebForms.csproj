@@ -16,7 +16,7 @@
     <RootNamespace>WebForms</RootNamespace>
     <AssemblyName>WebForms</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -379,19 +379,19 @@
     <Compile Include="Site\ArtistWeb\CreateArtist.aspx.designer.cs">
       <DependentUpon>CreateArtist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Site\MantainTemplate.master.cs">
-      <DependentUpon>MantainTemplate.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site\MantainTemplate.master.designer.cs">
-      <DependentUpon>MantainTemplate.master</DependentUpon>
-    </Compile>
     <Compile Include="Site\ArtistWeb\ListArtist.aspx.cs">
       <DependentUpon>ListArtist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site\ArtistWeb\ListArtist.aspx.designer.cs">
       <DependentUpon>ListArtist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\MantainTemplate.master.cs">
+      <DependentUpon>MantainTemplate.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\MantainTemplate.master.designer.cs">
+      <DependentUpon>MantainTemplate.master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">

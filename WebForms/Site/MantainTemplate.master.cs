@@ -5,18 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebForms.Site.ArtistWeb
+namespace WebForms.Site
 {
-    public partial class ArtistMasterPage : System.Web.UI.MasterPage
+    public partial class MantainTemplate : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void BackButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../../Default.aspx");
         }
     }
 }
