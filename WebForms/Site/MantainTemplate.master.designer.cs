@@ -7,10 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebForms.Site.ArtistWeb {
+namespace WebForms.Site {
     
     
-    public partial class ArtistMasterPage {
+    public partial class MantainTemplate
+    {
         
         /// <summary>
         /// ButtonContent control.
