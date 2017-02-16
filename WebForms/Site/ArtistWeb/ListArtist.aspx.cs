@@ -10,7 +10,7 @@ namespace WebForms.Site.ArtistWeb
             if (!IsPostBack)
             {
                 VerifyUser();
-                IsUserInRole("admin");
+                IsUserInRole("ADMIN");
             }
         }
         
