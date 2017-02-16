@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -12,18 +13,25 @@ namespace WebForms
 {
     public class Global : HttpApplication
     {
+        private ILog _logger;
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            log4net.Config.XmlConfigurator.Configure();
+            _logger = LogManager.GetLogger(typeof(Global));
+            _logger.Debug("Logging is enabled");
         }
 
         protected void Application_Error(Object sender, EventArgs e)
-        {
+        {   
             Exception ex = Server.GetLastError();
             if (ex is ThreadAbortException)
-                return;            
+                return;
+            _logger = LogManager.GetLogger(typeof(Global));
+            _logger.Error(ex);
             Response.Redirect("Error.aspx");
         }
     }
