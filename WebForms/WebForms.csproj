@@ -16,7 +16,7 @@
     <RootNamespace>WebForms</RootNamespace>
     <AssemblyName>WebForms</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -218,6 +218,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Site\ArtistWeb\Artist.js" />
     <Content Include="Site\ArtistWeb\CreateArtist.aspx" />
     <Content Include="Site\ArtistWeb\ListArtist.aspx" />
     <Content Include="ViewSwitcher.ascx" />

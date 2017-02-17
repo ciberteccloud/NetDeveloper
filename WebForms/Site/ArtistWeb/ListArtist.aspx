@@ -8,8 +8,11 @@
 <asp:Content ID="ListContent" ContentPlaceHolderID="ArtistContent" runat="server">
     <div class="row">
         <h3>Artist List</h3>
+        <br />
+        <button onclick="GetData();">Test Button</button>
     </div>
-    <asp:SqlDataSource ID="SqlDataSource"
+    <script src="Artist.js" type="text/javascript"</script>
+    <%--<asp:SqlDataSource ID="SqlDataSource"
         runat="server"
         ConnectionString="<%$ ConnectionStrings:ChinookConnection %>"
         SelectCommand="GetListOfArtist"
@@ -33,6 +36,6 @@
             AutoGenerateEditButton="True">
         </asp:GridView>
         <br />
-    </div>
+    </div>--%>
 
 </asp:Content>
