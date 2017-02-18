@@ -46,7 +46,7 @@ namespace WebForms
             if (ex is ThreadAbortException)
                 return;            
             _logger.Error(ex);
-            Response.Redirect("Error.aspx");
+            Response.Redirect("http://localhost/WebForms/Error.aspx");
         }
 
         private void NumberOfUsers()
