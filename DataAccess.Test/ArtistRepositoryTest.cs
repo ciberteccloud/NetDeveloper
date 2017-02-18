@@ -1,11 +1,10 @@
-﻿using DataAccess.Repositories;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Models;
+﻿using Models;
 using System.Linq;
+using Xunit;
+using FluentAssertions;
 
 namespace DataAccess.Test
-{
-    [TestClass]
+{    
     public class ArtistRepositoryTest
     {
         private readonly UnitOfWork _unitOfWork;
@@ -14,14 +13,14 @@ namespace DataAccess.Test
             _unitOfWork = new UnitOfWork(new ChinookContext());
         }
 
-        [TestMethod]
+        [Fact(DisplayName ="CountGreaterThanZero")]
         public void Test_Connection_And_Count_Greater_Than_Zero()
         {
             var count = _unitOfWork.Artists.Count();
-            Assert.AreEqual(count > 0, true);
+            count.Should().BeGreaterThan(0);            
         }
 
-        [TestMethod]
+        [Fact]
         public void Search_Artist_By_Id()
         {
             var artist = _unitOfWork.Artists.GetById(1);
@@ -30,25 +29,25 @@ namespace DataAccess.Test
                 ArtistId = 1,
                 Name = "AC/DC"
             };
-            Assert.AreEqual(expectedArtist.ArtistId, artist.ArtistId);
-            Assert.AreEqual(expectedArtist.Name, artist.Name);
+            expectedArtist.ArtistId.Should().Equals(artist.ArtistId);
+            expectedArtist.Name.Should().Equals(artist.Name);
         }
 
-        [TestMethod]
+        [Fact]
         public void Get_List_Of_Artist()
         {
             var artistList = _unitOfWork.Artists.GetAll();
-            Assert.AreEqual(artistList.Count() > 0, true);
+            artistList.Count().Should().BeGreaterThan(0);
         }
 
-        [TestMethod]
+        [Fact]
         public void Get_List_Of_Artist_by_Store()
         {
             var artistList = _unitOfWork.Artists.GetListArtistByStore();
-            Assert.AreEqual(artistList.Count() > 0, true);
+            artistList.Count().Should().BeGreaterThan(0);
         }
 
-        [TestMethod]
+        [Fact]
         public void Insert_Artist()
         {
             var newArtist = new Artist
@@ -58,28 +57,28 @@ namespace DataAccess.Test
             _unitOfWork.Artists.Add(newArtist);
             _unitOfWork.Complete();
             var expectedArtist = _unitOfWork.Artists.GetByName("Test Unit Of Work");
-            Assert.AreEqual(expectedArtist.ArtistId > 0, true);
-            Assert.AreEqual(expectedArtist.Name, "Test Unit Of Work");
+            expectedArtist.ArtistId.Should().BeGreaterThan(0);
+            expectedArtist.Name.Should().Be("Test Unit Of Work");
         }
 
-        [TestMethod]
+        [Fact]
         public void Delete_Artist_By_Id()
         {
             var removeArtist = _unitOfWork.Artists.GetByName("Test Unit Of Work");
-            _unitOfWork.Artists.Remove(removeArtist);            
-            Assert.AreEqual(_unitOfWork.Complete()> 0, true);
+            _unitOfWork.Artists.Remove(removeArtist);
+            _unitOfWork.Complete().Should().BeGreaterThan(0);
         }
 
-        [TestMethod]
+        [Fact]
         public void Get_List_Of_Artist_by_Page()
         {
             var artistListPage1 = _unitOfWork.Artists.GetListArtistByPage(1,10).ToList();
             var artistListPage2 = _unitOfWork.Artists.GetListArtistByPage(2, 10).ToList();
 
-            Assert.AreEqual(artistListPage1.Count() == artistListPage2.Count(), true);
+            artistListPage1.Count().Should().Be(artistListPage2.Count());
             for (int i = 0; i < 10; i++)
             {
-                Assert.AreEqual(artistListPage1[i].ArtistId != artistListPage2[i].ArtistId, true);
+                artistListPage1[i].ArtistId.Should().NotBe(artistListPage2[i].ArtistId);
             }
         }
     }
