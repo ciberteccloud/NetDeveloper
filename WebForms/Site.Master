@@ -17,7 +17,10 @@
 </head>
 <body>
     <form runat="server">
-        <asp:ScriptManager runat="server" ID="MainScriptManager">
+        <asp:ScriptManager 
+            runat="server" 
+            ID="MainScriptManager" 
+            EnablePartialRendering="true">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>

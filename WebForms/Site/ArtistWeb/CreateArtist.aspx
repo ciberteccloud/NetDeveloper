@@ -2,19 +2,51 @@
 
 <asp:Content ID="ButtonContent" ContentPlaceHolderID="ButtonContent" runat="server">
     <a class="btn btn-info" href="ListArtist.aspx">
-        <span class="glyphicon glyphicon-hand-left"></span> Return 
+        <span class="glyphicon glyphicon-hand-left"></span>Return 
     </a>
 </asp:Content>
 <asp:Content ID="ArtistContent" ContentPlaceHolderID="ArtistContent" runat="server">
-    <div class="row">
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="Artist Name:" />
-            <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-        </div>        
+    <div id="success" class="alert alert-success" role="alert">
+        <strong>Success!</strong> The record was created.
+    </div>
+    <div id="error" class="alert alert-success" role="alert">
+        <strong>Success!</strong> The record was created.
     </div>
     <div class="row">
         <div>
-            <asp:Button CssClass="btn btn-submit" runat="server" ID="btnCreate" Text="Create" OnClick="btnCreate_Click" />
+            <label>Artist Name:" </label>
+            <input type="text" required="required" id="Name" />
         </div>
     </div>
+    <div class="row">
+        <div>
+            <button class="btn btn-submit" onclick="insertArtist(); return false;">Create</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('.alert').hide();                      
+        })
+
+        function insertArtist() {
+            $('.alert').hide();
+            var name = document.getElementById('Name').value;
+            $.ajax({
+                type: "POST",
+                url: 'CreateArtist.aspx/InsertArtist',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: "{ 'name':'" + name + "' }",
+                success: function (data, status, xhr) {
+                    if(data.d==true)
+                    {                        
+                        $('#success').show();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $('#error').show();
+                }
+            });
+        }
+    </script>
 </asp:Content>

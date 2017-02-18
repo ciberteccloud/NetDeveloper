@@ -1,28 +1,29 @@
 ﻿using DataAccess;
 using Models;
 using System;
+using System.Web.Services;
+using WebForms.App_Code;
 
 namespace WebForms.Site.ArtistWeb
 {
-    public partial class CreateArtist : System.Web.UI.Page
+    public partial class CreateArtist : BasePage
     {
-        private UnitOfWork _unit;
-        public CreateArtist()
-        {
-            _unit = new UnitOfWork(new ChinookContext());
-        }
         protected void Page_Load(object sender, EventArgs e)
-        {            
-        }
-
-        protected void btnCreate_Click(object sender, EventArgs e)
         {
-            var artist = new Artist { Name=txtName.Text };
-            _unit.Artists.Add(artist);
-            if(_unit.Complete()>0)
+            if (!IsPostBack)
             {
-                Response.Redirect("ListArtist.aspx");
+                VerifyUser();
+                IsUserInRole("ADMIN");                
             }
         }
+
+        [WebMethod(EnableSession = true)]
+        public static bool InsertArtist(string name)
+        {
+            var artist = new Artist { Name = name };
+            _unit.Artists.Add(artist);
+            return _unit.Complete()>0;
+        }
+        
     }
 }

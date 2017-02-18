@@ -24,9 +24,10 @@ namespace DataAccess.Repositories
 
         public IEnumerable<Artist> GetListArtistByPage(int pageNumber, int rowSize)
         {
-            return ChinookContext.Artists.OrderBy(x=> x.ArtistId)
-              .Skip(rowSize * (pageNumber-1))
-              .Take(rowSize);
+            return ChinookContext.Artists
+                .OrderBy(x=> x.ArtistId)
+                .Skip(rowSize * (pageNumber-1))
+                .Take(rowSize);
         }
     }
 }

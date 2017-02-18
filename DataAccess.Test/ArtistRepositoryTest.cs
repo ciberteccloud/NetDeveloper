@@ -69,5 +69,18 @@ namespace DataAccess.Test
             _unitOfWork.Artists.Remove(removeArtist);            
             Assert.AreEqual(_unitOfWork.Complete()> 0, true);
         }
+
+        [TestMethod]
+        public void Get_List_Of_Artist_by_Page()
+        {
+            var artistListPage1 = _unitOfWork.Artists.GetListArtistByPage(1,10).ToList();
+            var artistListPage2 = _unitOfWork.Artists.GetListArtistByPage(2, 10).ToList();
+
+            Assert.AreEqual(artistListPage1.Count() == artistListPage2.Count(), true);
+            for (int i = 0; i < 10; i++)
+            {
+                Assert.AreEqual(artistListPage1[i].ArtistId != artistListPage2[i].ArtistId, true);
+            }
+        }
     }
 }
