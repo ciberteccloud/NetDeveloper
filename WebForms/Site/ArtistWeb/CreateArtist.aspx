@@ -9,8 +9,8 @@
     <div id="success" class="alert alert-success" role="alert">
         <strong>Success!</strong> The record was created.
     </div>
-    <div id="error" class="alert alert-success" role="alert">
-        <strong>Success!</strong> The record was created.
+    <div id="error" class="alert alert-danger" role="alert">
+        <strong>Error!</strong> The record was not created, contact an administrator.
     </div>
     <div class="row">
         <div>
