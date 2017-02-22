@@ -25,6 +25,9 @@ namespace WebForms
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
+            new ApplicationRoles().AddUserAndRole();
+
             _logger.Debug("Logging is enabled");
             Application["Users"] = 0;
         }
