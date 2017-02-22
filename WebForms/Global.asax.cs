@@ -24,7 +24,7 @@ namespace WebForms
             Exception ex = Server.GetLastError();
             if (ex is ThreadAbortException)
                 return;            
-            Response.Redirect("Error.aspx");
+            Response.Redirect("http://localhost/WebForms/Error.aspx");
         }
     }
 }
