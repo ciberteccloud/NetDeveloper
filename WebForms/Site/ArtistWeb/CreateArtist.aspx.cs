@@ -13,7 +13,7 @@ namespace WebForms.Site.ArtistWeb
             if (!IsPostBack)
             {
                 VerifyUser();
-                IsUserInRole("ADMIN");                
+                IsUserInRole("ADMIN");
             }
         }
 
@@ -21,9 +21,12 @@ namespace WebForms.Site.ArtistWeb
         public static bool InsertArtist(string name)
         {
             var artist = new Artist { Name = name };
-            _unit.Artists.Add(artist);
-            return _unit.Complete()>0;
+            using (var unit = new UnitOfWork(new ChinookContext()))
+            {
+                unit.Artists.Add(artist);
+                return unit.Complete() > 0;
+            }
         }
-        
     }
 }
+
