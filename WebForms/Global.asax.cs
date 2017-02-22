@@ -32,7 +32,7 @@ namespace WebForms
                 return;
             _logger = LogManager.GetLogger(typeof(Global));
             _logger.Error(ex);
-            Response.Redirect("Error.aspx");
+            Response.Redirect("http://localhost/WebForms/Error.aspx");
         }
     }
 }
