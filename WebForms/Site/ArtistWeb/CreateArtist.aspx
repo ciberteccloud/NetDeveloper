@@ -40,6 +40,7 @@
                 success: function (data, status, xhr) {
                     if (data.d == true) {
                         $('#success').show();
+                        document.getElementById('Name').value = '';
                     }
                 },
                 error: function (xhr, status, error) {
