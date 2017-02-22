@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using WebForms.App_Code;
 
 namespace WebForms
 {
@@ -19,6 +20,8 @@ namespace WebForms
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            new ApplicationRoles().AddUserAndRole();
 
             log4net.Config.XmlConfigurator.Configure();
             _logger = LogManager.GetLogger(typeof(Global));
