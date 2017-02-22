@@ -14,7 +14,7 @@
     </div>
     <div class="row">
         <div>
-            <label>Artist Name:" </label>
+            <label>Artist Name: </label>
             <input type="text" required="required" id="Name" />
         </div>
     </div>
