@@ -13,7 +13,5 @@ namespace WebForms.Site.ArtistWeb
                 IsUserInRole("ADMIN");
             }
         }
-        
-        
     }
 }
