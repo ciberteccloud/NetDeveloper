@@ -14,7 +14,7 @@
     </div>
     <div class="row">
         <div>
-            <label>Artist Name:" </label>
+            <label>Artist Name: </label>
             <input type="text" required="required" id="Name" />
         </div>
     </div>
@@ -25,7 +25,7 @@
     </div>
     <script type="text/javascript">
         $(function () {
-            $('.alert').hide();                      
+            $('.alert').hide();
         })
 
         function insertArtist() {
@@ -38,9 +38,9 @@
                 dataType: 'json',
                 data: "{ 'name':'" + name + "' }",
                 success: function (data, status, xhr) {
-                    if(data.d==true)
-                    {                        
+                    if (data.d == true) {
                         $('#success').show();
+                        document.getElementById('Name').value = '';
                     }
                 },
                 error: function (xhr, status, error) {

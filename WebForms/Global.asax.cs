@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using WebForms.App_Code;
 
 namespace WebForms
 {
@@ -23,7 +24,7 @@ namespace WebForms
         {
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);            
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
             _logger.Debug("Logging is enabled");
             Application["Users"] = 0;
         }
@@ -39,12 +40,12 @@ namespace WebForms
             Application["Users"] = Convert.ToInt32(Application["Users"])-1;
             NumberOfUsers();
         }
-        
+
         protected void Application_Error(Object sender, EventArgs e)
         {   
             Exception ex = Server.GetLastError();
             if (ex is ThreadAbortException)
-                return;            
+                return;
             _logger.Error(ex);
             Response.Redirect("http://localhost/WebForms/Error.aspx");
         }
