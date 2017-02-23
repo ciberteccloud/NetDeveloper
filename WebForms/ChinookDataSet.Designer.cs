@@ -24,7 +24,7 @@ namespace WebForms {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class ChinookDataSet : global::System.Data.DataSet {
         
-        private AlbumTracksDataTable tableAlbumTracks;
+        private CustomerInvoiceDataTable tableCustomerInvoice;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace WebForms {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["AlbumTracks"] != null)) {
-                    base.Tables.Add(new AlbumTracksDataTable(ds.Tables["AlbumTracks"]));
+                if ((ds.Tables["CustomerInvoice"] != null)) {
+                    base.Tables.Add(new CustomerInvoiceDataTable(ds.Tables["CustomerInvoice"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace WebForms {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AlbumTracksDataTable AlbumTracks {
+        public CustomerInvoiceDataTable CustomerInvoice {
             get {
-                return this.tableAlbumTracks;
+                return this.tableCustomerInvoice;
             }
         }
         
@@ -152,8 +152,8 @@ namespace WebForms {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["AlbumTracks"] != null)) {
-                    base.Tables.Add(new AlbumTracksDataTable(ds.Tables["AlbumTracks"]));
+                if ((ds.Tables["CustomerInvoice"] != null)) {
+                    base.Tables.Add(new CustomerInvoiceDataTable(ds.Tables["CustomerInvoice"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace WebForms {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAlbumTracks = ((AlbumTracksDataTable)(base.Tables["AlbumTracks"]));
+            this.tableCustomerInvoice = ((CustomerInvoiceDataTable)(base.Tables["CustomerInvoice"]));
             if ((initTable == true)) {
-                if ((this.tableAlbumTracks != null)) {
-                    this.tableAlbumTracks.InitVars();
+                if ((this.tableCustomerInvoice != null)) {
+                    this.tableCustomerInvoice.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace WebForms {
             this.Namespace = "http://tempuri.org/ChinookDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAlbumTracks = new AlbumTracksDataTable();
-            base.Tables.Add(this.tableAlbumTracks);
+            this.tableCustomerInvoice = new CustomerInvoiceDataTable();
+            base.Tables.Add(this.tableCustomerInvoice);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeAlbumTracks() {
+        private bool ShouldSerializeCustomerInvoice() {
             return false;
         }
         
@@ -270,33 +270,33 @@ namespace WebForms {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void AlbumTracksRowChangeEventHandler(object sender, AlbumTracksRowChangeEvent e);
+        public delegate void CustomerInvoiceRowChangeEventHandler(object sender, CustomerInvoiceRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AlbumTracksDataTable : global::System.Data.TypedTableBase<AlbumTracksRow> {
+        public partial class CustomerInvoiceDataTable : global::System.Data.TypedTableBase<CustomerInvoiceRow> {
             
-            private global::System.Data.DataColumn columnAlbumTitle;
+            private global::System.Data.DataColumn columnBillingCountry;
             
-            private global::System.Data.DataColumn columnArtistName;
-            
-            private global::System.Data.DataColumn columnTrackName;
-            
-            private global::System.Data.DataColumn columnMediaTypeName;
-            
-            private global::System.Data.DataColumn columnMilliseconds;
-            
-            private global::System.Data.DataColumn columnComposer;
+            private global::System.Data.DataColumn columnQuantity;
             
             private global::System.Data.DataColumn columnUnitPrice;
             
+            private global::System.Data.DataColumn columnTotal;
+            
+            private global::System.Data.DataColumn columnFirstName;
+            
+            private global::System.Data.DataColumn columnLastName;
+            
+            private global::System.Data.DataColumn columnEmail;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AlbumTracksDataTable() {
-                this.TableName = "AlbumTracks";
+            public CustomerInvoiceDataTable() {
+                this.TableName = "CustomerInvoice";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +304,7 @@ namespace WebForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal AlbumTracksDataTable(global::System.Data.DataTable table) {
+            internal CustomerInvoiceDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,56 +321,24 @@ namespace WebForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected AlbumTracksDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CustomerInvoiceDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AlbumTitleColumn {
+            public global::System.Data.DataColumn BillingCountryColumn {
                 get {
-                    return this.columnAlbumTitle;
+                    return this.columnBillingCountry;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ArtistNameColumn {
+            public global::System.Data.DataColumn QuantityColumn {
                 get {
-                    return this.columnArtistName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TrackNameColumn {
-                get {
-                    return this.columnTrackName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MediaTypeNameColumn {
-                get {
-                    return this.columnMediaTypeName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MillisecondsColumn {
-                get {
-                    return this.columnMilliseconds;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ComposerColumn {
-                get {
-                    return this.columnComposer;
+                    return this.columnQuantity;
                 }
             }
             
@@ -379,6 +347,38 @@ namespace WebForms {
             public global::System.Data.DataColumn UnitPriceColumn {
                 get {
                     return this.columnUnitPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FirstNameColumn {
+                get {
+                    return this.columnFirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LastNameColumn {
+                get {
+                    return this.columnLastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmailColumn {
+                get {
+                    return this.columnEmail;
                 }
             }
             
@@ -393,51 +393,51 @@ namespace WebForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AlbumTracksRow this[int index] {
+            public CustomerInvoiceRow this[int index] {
                 get {
-                    return ((AlbumTracksRow)(this.Rows[index]));
+                    return ((CustomerInvoiceRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AlbumTracksRowChangeEventHandler AlbumTracksRowChanging;
+            public event CustomerInvoiceRowChangeEventHandler CustomerInvoiceRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AlbumTracksRowChangeEventHandler AlbumTracksRowChanged;
+            public event CustomerInvoiceRowChangeEventHandler CustomerInvoiceRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AlbumTracksRowChangeEventHandler AlbumTracksRowDeleting;
+            public event CustomerInvoiceRowChangeEventHandler CustomerInvoiceRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AlbumTracksRowChangeEventHandler AlbumTracksRowDeleted;
+            public event CustomerInvoiceRowChangeEventHandler CustomerInvoiceRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddAlbumTracksRow(AlbumTracksRow row) {
+            public void AddCustomerInvoiceRow(CustomerInvoiceRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AlbumTracksRow AddAlbumTracksRow(string AlbumTitle, string ArtistName, string TrackName, string MediaTypeName, int Milliseconds, string Composer, decimal UnitPrice) {
-                AlbumTracksRow rowAlbumTracksRow = ((AlbumTracksRow)(this.NewRow()));
+            public CustomerInvoiceRow AddCustomerInvoiceRow(string BillingCountry, int Quantity, decimal UnitPrice, decimal Total, string FirstName, string LastName, string Email) {
+                CustomerInvoiceRow rowCustomerInvoiceRow = ((CustomerInvoiceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        AlbumTitle,
-                        ArtistName,
-                        TrackName,
-                        MediaTypeName,
-                        Milliseconds,
-                        Composer,
-                        UnitPrice};
-                rowAlbumTracksRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAlbumTracksRow);
-                return rowAlbumTracksRow;
+                        BillingCountry,
+                        Quantity,
+                        UnitPrice,
+                        Total,
+                        FirstName,
+                        LastName,
+                        Email};
+                rowCustomerInvoiceRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCustomerInvoiceRow);
+                return rowCustomerInvoiceRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AlbumTracksDataTable cln = ((AlbumTracksDataTable)(base.Clone()));
+                CustomerInvoiceDataTable cln = ((CustomerInvoiceDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -445,73 +445,74 @@ namespace WebForms {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AlbumTracksDataTable();
+                return new CustomerInvoiceDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnAlbumTitle = base.Columns["AlbumTitle"];
-                this.columnArtistName = base.Columns["ArtistName"];
-                this.columnTrackName = base.Columns["TrackName"];
-                this.columnMediaTypeName = base.Columns["MediaTypeName"];
-                this.columnMilliseconds = base.Columns["Milliseconds"];
-                this.columnComposer = base.Columns["Composer"];
+                this.columnBillingCountry = base.Columns["BillingCountry"];
+                this.columnQuantity = base.Columns["Quantity"];
                 this.columnUnitPrice = base.Columns["UnitPrice"];
+                this.columnTotal = base.Columns["Total"];
+                this.columnFirstName = base.Columns["FirstName"];
+                this.columnLastName = base.Columns["LastName"];
+                this.columnEmail = base.Columns["Email"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnAlbumTitle = new global::System.Data.DataColumn("AlbumTitle", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAlbumTitle);
-                this.columnArtistName = new global::System.Data.DataColumn("ArtistName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnArtistName);
-                this.columnTrackName = new global::System.Data.DataColumn("TrackName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTrackName);
-                this.columnMediaTypeName = new global::System.Data.DataColumn("MediaTypeName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMediaTypeName);
-                this.columnMilliseconds = new global::System.Data.DataColumn("Milliseconds", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMilliseconds);
-                this.columnComposer = new global::System.Data.DataColumn("Composer", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnComposer);
+                this.columnBillingCountry = new global::System.Data.DataColumn("BillingCountry", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBillingCountry);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
                 this.columnUnitPrice = new global::System.Data.DataColumn("UnitPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUnitPrice);
-                this.columnAlbumTitle.AllowDBNull = false;
-                this.columnAlbumTitle.MaxLength = 160;
-                this.columnArtistName.MaxLength = 120;
-                this.columnTrackName.AllowDBNull = false;
-                this.columnTrackName.MaxLength = 200;
-                this.columnMediaTypeName.MaxLength = 120;
-                this.columnMilliseconds.AllowDBNull = false;
-                this.columnComposer.MaxLength = 220;
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
+                this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstName);
+                this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLastName);
+                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmail);
+                this.columnBillingCountry.MaxLength = 40;
+                this.columnQuantity.AllowDBNull = false;
                 this.columnUnitPrice.AllowDBNull = false;
+                this.columnTotal.AllowDBNull = false;
+                this.columnFirstName.AllowDBNull = false;
+                this.columnFirstName.MaxLength = 40;
+                this.columnLastName.AllowDBNull = false;
+                this.columnLastName.MaxLength = 20;
+                this.columnEmail.AllowDBNull = false;
+                this.columnEmail.MaxLength = 60;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AlbumTracksRow NewAlbumTracksRow() {
-                return ((AlbumTracksRow)(this.NewRow()));
+            public CustomerInvoiceRow NewCustomerInvoiceRow() {
+                return ((CustomerInvoiceRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AlbumTracksRow(builder);
+                return new CustomerInvoiceRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(AlbumTracksRow);
+                return typeof(CustomerInvoiceRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.AlbumTracksRowChanged != null)) {
-                    this.AlbumTracksRowChanged(this, new AlbumTracksRowChangeEvent(((AlbumTracksRow)(e.Row)), e.Action));
+                if ((this.CustomerInvoiceRowChanged != null)) {
+                    this.CustomerInvoiceRowChanged(this, new CustomerInvoiceRowChangeEvent(((CustomerInvoiceRow)(e.Row)), e.Action));
                 }
             }
             
@@ -519,8 +520,8 @@ namespace WebForms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.AlbumTracksRowChanging != null)) {
-                    this.AlbumTracksRowChanging(this, new AlbumTracksRowChangeEvent(((AlbumTracksRow)(e.Row)), e.Action));
+                if ((this.CustomerInvoiceRowChanging != null)) {
+                    this.CustomerInvoiceRowChanging(this, new CustomerInvoiceRowChangeEvent(((CustomerInvoiceRow)(e.Row)), e.Action));
                 }
             }
             
@@ -528,8 +529,8 @@ namespace WebForms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.AlbumTracksRowDeleted != null)) {
-                    this.AlbumTracksRowDeleted(this, new AlbumTracksRowChangeEvent(((AlbumTracksRow)(e.Row)), e.Action));
+                if ((this.CustomerInvoiceRowDeleted != null)) {
+                    this.CustomerInvoiceRowDeleted(this, new CustomerInvoiceRowChangeEvent(((CustomerInvoiceRow)(e.Row)), e.Action));
                 }
             }
             
@@ -537,14 +538,14 @@ namespace WebForms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.AlbumTracksRowDeleting != null)) {
-                    this.AlbumTracksRowDeleting(this, new AlbumTracksRowChangeEvent(((AlbumTracksRow)(e.Row)), e.Action));
+                if ((this.CustomerInvoiceRowDeleting != null)) {
+                    this.CustomerInvoiceRowDeleting(this, new CustomerInvoiceRowChangeEvent(((CustomerInvoiceRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveAlbumTracksRow(AlbumTracksRow row) {
+            public void RemoveCustomerInvoiceRow(CustomerInvoiceRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -571,7 +572,7 @@ namespace WebForms {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AlbumTracksDataTable";
+                attribute2.FixedValue = "CustomerInvoiceDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -615,95 +616,41 @@ namespace WebForms {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AlbumTracksRow : global::System.Data.DataRow {
+        public partial class CustomerInvoiceRow : global::System.Data.DataRow {
             
-            private AlbumTracksDataTable tableAlbumTracks;
+            private CustomerInvoiceDataTable tableCustomerInvoice;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal AlbumTracksRow(global::System.Data.DataRowBuilder rb) : 
+            internal CustomerInvoiceRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAlbumTracks = ((AlbumTracksDataTable)(this.Table));
+                this.tableCustomerInvoice = ((CustomerInvoiceDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AlbumTitle {
-                get {
-                    return ((string)(this[this.tableAlbumTracks.AlbumTitleColumn]));
-                }
-                set {
-                    this[this.tableAlbumTracks.AlbumTitleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ArtistName {
+            public string BillingCountry {
                 get {
                     try {
-                        return ((string)(this[this.tableAlbumTracks.ArtistNameColumn]));
+                        return ((string)(this[this.tableCustomerInvoice.BillingCountryColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ArtistName\' in table \'AlbumTracks\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BillingCountry\' in table \'CustomerInvoice\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAlbumTracks.ArtistNameColumn] = value;
+                    this[this.tableCustomerInvoice.BillingCountryColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TrackName {
+            public int Quantity {
                 get {
-                    return ((string)(this[this.tableAlbumTracks.TrackNameColumn]));
+                    return ((int)(this[this.tableCustomerInvoice.QuantityColumn]));
                 }
                 set {
-                    this[this.tableAlbumTracks.TrackNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MediaTypeName {
-                get {
-                    try {
-                        return ((string)(this[this.tableAlbumTracks.MediaTypeNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MediaTypeName\' in table \'AlbumTracks\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAlbumTracks.MediaTypeNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Milliseconds {
-                get {
-                    return ((int)(this[this.tableAlbumTracks.MillisecondsColumn]));
-                }
-                set {
-                    this[this.tableAlbumTracks.MillisecondsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Composer {
-                get {
-                    try {
-                        return ((string)(this[this.tableAlbumTracks.ComposerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Composer\' in table \'AlbumTracks\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAlbumTracks.ComposerColumn] = value;
+                    this[this.tableCustomerInvoice.QuantityColumn] = value;
                 }
             }
             
@@ -711,47 +658,67 @@ namespace WebForms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal UnitPrice {
                 get {
-                    return ((decimal)(this[this.tableAlbumTracks.UnitPriceColumn]));
+                    return ((decimal)(this[this.tableCustomerInvoice.UnitPriceColumn]));
                 }
                 set {
-                    this[this.tableAlbumTracks.UnitPriceColumn] = value;
+                    this[this.tableCustomerInvoice.UnitPriceColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsArtistNameNull() {
-                return this.IsNull(this.tableAlbumTracks.ArtistNameColumn);
+            public decimal Total {
+                get {
+                    return ((decimal)(this[this.tableCustomerInvoice.TotalColumn]));
+                }
+                set {
+                    this[this.tableCustomerInvoice.TotalColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetArtistNameNull() {
-                this[this.tableAlbumTracks.ArtistNameColumn] = global::System.Convert.DBNull;
+            public string FirstName {
+                get {
+                    return ((string)(this[this.tableCustomerInvoice.FirstNameColumn]));
+                }
+                set {
+                    this[this.tableCustomerInvoice.FirstNameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMediaTypeNameNull() {
-                return this.IsNull(this.tableAlbumTracks.MediaTypeNameColumn);
+            public string LastName {
+                get {
+                    return ((string)(this[this.tableCustomerInvoice.LastNameColumn]));
+                }
+                set {
+                    this[this.tableCustomerInvoice.LastNameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMediaTypeNameNull() {
-                this[this.tableAlbumTracks.MediaTypeNameColumn] = global::System.Convert.DBNull;
+            public string Email {
+                get {
+                    return ((string)(this[this.tableCustomerInvoice.EmailColumn]));
+                }
+                set {
+                    this[this.tableCustomerInvoice.EmailColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsComposerNull() {
-                return this.IsNull(this.tableAlbumTracks.ComposerColumn);
+            public bool IsBillingCountryNull() {
+                return this.IsNull(this.tableCustomerInvoice.BillingCountryColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetComposerNull() {
-                this[this.tableAlbumTracks.ComposerColumn] = global::System.Convert.DBNull;
+            public void SetBillingCountryNull() {
+                this[this.tableCustomerInvoice.BillingCountryColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -759,22 +726,22 @@ namespace WebForms {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class AlbumTracksRowChangeEvent : global::System.EventArgs {
+        public class CustomerInvoiceRowChangeEvent : global::System.EventArgs {
             
-            private AlbumTracksRow eventRow;
+            private CustomerInvoiceRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AlbumTracksRowChangeEvent(AlbumTracksRow row, global::System.Data.DataRowAction action) {
+            public CustomerInvoiceRowChangeEvent(CustomerInvoiceRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AlbumTracksRow Row {
+            public CustomerInvoiceRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -802,7 +769,7 @@ namespace WebForms.ChinookDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AlbumTracksTableAdapter : global::System.ComponentModel.Component {
+    public partial class CustomerInvoiceTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -816,7 +783,7 @@ namespace WebForms.ChinookDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public AlbumTracksTableAdapter() {
+        public CustomerInvoiceTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -913,14 +880,14 @@ namespace WebForms.ChinookDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AlbumTracks";
-            tableMapping.ColumnMappings.Add("AlbumTitle", "AlbumTitle");
-            tableMapping.ColumnMappings.Add("ArtistName", "ArtistName");
-            tableMapping.ColumnMappings.Add("TrackName", "TrackName");
-            tableMapping.ColumnMappings.Add("MediaTypeName", "MediaTypeName");
-            tableMapping.ColumnMappings.Add("Milliseconds", "Milliseconds");
-            tableMapping.ColumnMappings.Add("Composer", "Composer");
+            tableMapping.DataSetTable = "CustomerInvoice";
+            tableMapping.ColumnMappings.Add("BillingCountry", "BillingCountry");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
             tableMapping.ColumnMappings.Add("UnitPrice", "UnitPrice");
+            tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("FirstName", "FirstName");
+            tableMapping.ColumnMappings.Add("LastName", "LastName");
+            tableMapping.ColumnMappings.Add("Email", "Email");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -937,17 +904,31 @@ namespace WebForms.ChinookDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AlbumTitle, ArtistName, TrackName, MediaTypeName, Milliseconds, Composer, " +
-                "UnitPrice FROM dbo.AlbumTracks";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].CommandText = "dbo.CustomerInvoice";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@invoiceId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.NVarChar, 60, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ChinookDataSet.AlbumTracksDataTable dataTable) {
+        public virtual int Fill(ChinookDataSet.CustomerInvoiceDataTable dataTable, global::System.Nullable<int> invoiceId, string email) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((invoiceId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(invoiceId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((email == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(email));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -959,9 +940,21 @@ namespace WebForms.ChinookDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ChinookDataSet.AlbumTracksDataTable GetData() {
+        public virtual ChinookDataSet.CustomerInvoiceDataTable GetData(global::System.Nullable<int> invoiceId, string email) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ChinookDataSet.AlbumTracksDataTable dataTable = new ChinookDataSet.AlbumTracksDataTable();
+            if ((invoiceId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(invoiceId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((email == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(email));
+            }
+            ChinookDataSet.CustomerInvoiceDataTable dataTable = new ChinookDataSet.CustomerInvoiceDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
