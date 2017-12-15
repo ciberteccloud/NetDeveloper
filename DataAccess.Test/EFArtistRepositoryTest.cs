@@ -54,12 +54,43 @@ namespace DataAccess.Test
             var artistId = _entity.InsertArtist("New Artist EF");
             Assert.AreEqual(artistId > 0, true);
         }
-                
+
         [TestMethod]
         public void Delete_Artist_By_Id()
         {
             var artistId = _entity.DeleteArtistById(279);
             Assert.AreEqual(279, artistId);
         }
+                
+        [TestMethod]
+        public void Ejecucion_Diferida()
+        {
+            using (var context = new ChinookContext())
+            {
+                var result = from artist in context.Artist
+                             where artist.Name.StartsWith("A")
+                             select artist;
+
+                //La ejecucion se hace aquí
+                foreach (var artist in result)
+                {
+                    Assert.AreEqual(artist.ArtistId > 0, true);
+                }
+            }            
+        }
+
+        [TestMethod]
+        public void Ejecucion_Inmediata()
+        {
+            using (var context = new ChinookContext())
+            {
+                var result = (from artist in context.Artist
+                              where artist.Name.StartsWith("A")
+                              select artist).Count();
+                
+                Assert.AreEqual(result > 0, true);
+            }
+        }
+        
     }
 }
